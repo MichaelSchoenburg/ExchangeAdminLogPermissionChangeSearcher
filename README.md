@@ -1,3 +1,5 @@
+![img_license](https://img.shields.io/github/license/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher) ![img_version](https://img.shields.io/github/v/release/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher)
+
 # ExchangeAdminLogPermissionChangeSearcher
 A PowerShell script helping you to search for specific changes to permission documented in the Online Exchange Admin Log.
 This script it cut out to search for permissions since it uses the parameters "User" and "Identity".
@@ -16,15 +18,13 @@ Performance Considerations: https://docs.microsoft.com/en-us/powershell/scriptin
 * Step 5: Receive a filterable and sortable table (GUI) with results.
 
 ## Example
-I want to see every log where someone has given the user "John" any level of permission to any mailbox:
+**I want to see every log where someone has given the user "John" any level of permission to any mailbox:**
 
 Cmdlet = Add-MailboxPermission
 
 User = John
 
-
-
-I want to see every log where someone has given somebody any level of permission to the public folder "Sales" (which has the identiy "\Our Departments\Sales").
+**I want to see every log where someone has given somebody any level of permission to the public folder "Sales" (which has the identiy "\Our Departments\Sales").**
 
 Cmdlet = Add-PublicFolderClientPermission
 
