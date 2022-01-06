@@ -23,6 +23,7 @@ Cmdlet = Add-MailboxPermission
 User = John
 
 
+
 I want to see every log where someone has given somebody any level of permission to the public folder "Sales" (which has the identiy "\Our Departments\Sales").
 
 Cmdlet = Add-PublicFolderClientPermission
