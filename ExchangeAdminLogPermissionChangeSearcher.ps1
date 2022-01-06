@@ -156,6 +156,8 @@ $Out = @()
 #endregion DECLARATIONS
 #region EXECUTION
 
+Connect-ExchangeOnline
+
 $Cmdlet = Read-Host "Cmdlet"
 $LogEntries = Search-AdminAuditLog -Cmdlets $Cmdlet
 
