@@ -25,6 +25,8 @@ Performance Considerations: https://docs.microsoft.com/en-us/powershell/scriptin
 |Cmdlet|Add-MailboxPermission|
 |User|John|
 
+---
+
 **I want to see every log where someone has given somebody any level of permission to the public folder "Sales" (which has the identity "\Our Departments\Sales").**
 |Question|Answer|
 |-|-|
