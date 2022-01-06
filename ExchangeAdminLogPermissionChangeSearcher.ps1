@@ -12,6 +12,10 @@
     Version: 1.0
     Last Change: 06.01.2022
     GitHub Repository: https://github.com/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher
+
+    This projects code loosely follows the PowerShell Practice and Style guide*, as well as Microsofts PowerShell scripting performance considerations**.
+    * https://poshcode.gitbook.io/powershell-practice-and-style/
+    ** https://docs.microsoft.com/en-us/powershell/scripting/dev-cross-plat/performance/script-authoring-considerations?view=powershell-7.1
 #>
 
 #region INITIALIZATION
@@ -65,17 +69,24 @@ function Get-CustomLogEntry {
     $IndexAccessRights = $r.CmdletParameters.Name.indexof("AccessRights")
     $IndexErrorAction = $r.CmdletParameters.Name.indexof("ErrorAction")
     if ($IndexErrorAction -eq -1) {
+        # The parameter ErrorAction has not been specified -> only possible when using PowerShell
         $ErrorAction = ''
-        $ProbablyRanFromEAC = $false
+        $DefinitelyRanFromShell = $true
     } else {
+        # The parameter "ErrorAction" has been specified -> could have been the Exchange Admin Center, as well as PowerShell.
         $ErrorAction = $r.CmdletParameters.Value[$IndexErrorAction]
-        $ProbablyRanFromEAC = $true
+        # The Exchange Admin Center always specifies "Stop" for the parameter "ErrorAction".
+        if ($ErrorAction -ne 'Stop') {
+            $DefinitelyRanFromShell = $true            
+        } else {
+            $DefinitelyRanFromShell = $false
+        }
     }
 
     $object = [pscustomobject]@{
         RunDate = $r.RunDate
         Caller = $r.Caller
-        ProbablyRanFromEAC = $ProbablyRanFromEAC
+        DefinitelyRanFromShell = $DefinitelyRanFromShell
         Cmdlet = $r.CmdletName
         Identity = $r.CmdletParameters.Value[$IndexIdentity]
         User = $r.CmdletParameters.Value[$IndexUser]
