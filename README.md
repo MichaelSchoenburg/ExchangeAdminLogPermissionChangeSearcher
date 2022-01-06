@@ -20,14 +20,15 @@ Performance Considerations: https://docs.microsoft.com/en-us/powershell/scriptin
 ## Example
 **I want to see every log where someone has given the user "John" any level of permission to any mailbox:**
 
-Cmdlet = Add-MailboxPermission
-
-User = John
+|Question|Answer|
+|-|-|
+|Cmdlet|Add-MailboxPermission|
+|User|John|
 
 **I want to see every log where someone has given somebody any level of permission to the public folder "Sales" (which has the identiy "\Our Departments\Sales").**
+|Question|Answer|
+|-|-|
+|Cmdlet|Add-PublicFolderClientPermission|
+|Identity|\Our Departments\Sales|
 
-Cmdlet = Add-PublicFolderClientPermission
-
-Identity = \Our Departments\Sales
-
-(You mustn't add quotes)
+(You mustn't add quotes in your answers)
