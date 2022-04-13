@@ -1,4 +1,4 @@
-![img_license](https://img.shields.io/github/license/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher) ![img_version](https://img.shields.io/github/v/release/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher)
+![img_license](https://img.shields.io/github/license/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher) ![img_version](https://img.shields.io/github/v/release/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher) [![PSScriptAnalyzer](https://github.com/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher/actions/workflows/powershell.yml/badge.svg)](https://github.com/MichaelSchoenburg/ExchangeAdminLogPermissionChangeSearcher/actions/workflows/powershell.yml)
 
 # ExchangeAdminLogPermissionChangeSearcher
 A PowerShell script helping you to search for specific changes to permission documented in the Online Exchange Admin Log.
